@@ -14,7 +14,7 @@
 
 // Домашнее задание 2
 
-/* {
+{
             let a = +prompt('Введите любое число');
             let b = +prompt('Введите любое число');
             if (a > 0) {
@@ -30,7 +30,7 @@
                                     alert(a * b);
                         }
             }
-} */
+}
 
 {
             let a = 7;
@@ -52,4 +52,46 @@
                         case 14: alert(14);
                         case 15: alert(15);
             }
+}
+
+function add(a, b) {
+            return a + b;
+}
+
+function sub(a, b) {
+            return a - b;
+}
+
+function mult(a, b) {
+            return a * b;
+}
+
+function div(a, b) {
+            return a / b;
+}
+
+function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                        case ('Сложение'):
+                                    return add(arg1, arg2);
+                        case ('Вычитание'):
+                                    return sub(arg1, arg2);
+                        case ('Умножение'):
+                                    return mult(arg1, arg2);
+                        case ('Деление'):
+                                    return div(arg1, arg2);
+                        default: return 'Нет такой операции';
+            }
+}
+
+function power(val, pow) {
+            if (pow > 0) {
+                        if (pow > 1) {
+                                    return val * power(val, pow - 1);
+                        } else {
+                                    return val;
+                        }
+            } else if (pow < -1) {
+                        return 1 / (val * power(val, -1 * (pow + 1)));
+            } else return 1 / val;
 }
