@@ -14,7 +14,7 @@
 
 // Домашнее задание 2
 
-{
+/* {
             let a = +prompt('Введите любое число');
             let b = +prompt('Введите любое число');
             if (a > 0) {
@@ -94,4 +94,33 @@ function power(val, pow) {
             } else if (pow < -1) {
                         return 1 / (val * power(val, -1 * (pow + 1)));
             } else return 1 / val;
+} */
+
+let justingNumbers = 'Натуральные числа: ';
+let i = 2;
+
+while (i < 101) {
+            if ((i != 2 && i != 3)) {
+                        if ((i % 2) > 0) {
+                                    if ((i % 3) > 0) {
+                                                if ((i % 5) > 0) {
+                                                            justingNumbers = justingNumbers + ' ' + i;
+                                                            ++i;
+                                                } else {
+                                                            ++i;
+                                                }
+
+                                    } else {
+                                                ++i;
+                                    }
+                                    ++i;
+                        } else {
+                                    ++i;
+                        }
+            } else {
+                        justingNumbers = justingNumbers + ' ' + i;
+                        ++i;
+            }
 }
+
+alert(justingNumbers);
