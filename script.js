@@ -96,7 +96,7 @@ function power(val, pow) {
             } else return 1 / val;
 } */
 
-let justingNumbers = 'Натуральные числа: ';
+let justingNumbers = 'Простые числа от 0 до 100: ';
 let i = 2;
 
 while (i < 101) {
