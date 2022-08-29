@@ -127,7 +127,7 @@ while (i < 101) {
 
 alert(justingNumbers); */
 
-let basket = [
+/* let basket = [
             // 1. название товара 2. стоимость за 1 штуку 3. Количество штук в корзине
             ['подшипники', 250, 5],
             ['гайки', 5, 50],
@@ -151,4 +151,6 @@ function countBasketPrice(basket) {
 
 }
 
-alert(countBasketPrice(basket));
+alert(countBasketPrice(basket)); */
+
+for (let i = 0; i < 10; alert(i++)) { }
