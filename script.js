@@ -96,7 +96,9 @@ function power(val, pow) {
             } else return 1 / val;
 } */
 
-let justingNumbers = 'Простые числа от 0 до 100: ';
+// Домашнее задание 3
+
+/* let justingNumbers = 'Простые числа от 0 до 100: ';
 let i = 2;
 
 while (i < 101) {
@@ -123,4 +125,30 @@ while (i < 101) {
             }
 }
 
-alert(justingNumbers);
+alert(justingNumbers); */
+
+let basket = [
+            // 1. название товара 2. стоимость за 1 штуку 3. Количество штук в корзине
+            ['подшипники', 250, 5],
+            ['гайки', 5, 50],
+            ['прокладки', 30, 40],
+            ['трубы', 800, 2],
+            ['лампочки', 50, 5],
+            ['диоды', 25, 10]
+];
+
+function countBasketPrice(basket) {
+            let quantityBasket = basket.length;
+            let basketPrice = 'Стоимость товаров в корзине:';
+            let price = 0;
+            for (let i = 0; quantityBasket > 0; i++) {
+                        basketPrice = basketPrice + '\n' + (basket[i][0]) + ': ' + (basket[i][1] * +basket[i][2]) + ` рублей за ${basket[i][2]} шт.`;
+                        price += (basket[i][1] * basket[i][2]);
+                        quantityBasket--;
+            }
+            basketPrice = basketPrice + '\n' + `Итоговая стоимость всех товаров ${price} рублей`;
+            return basketPrice;
+
+}
+
+alert(countBasketPrice(basket));
