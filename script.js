@@ -98,7 +98,8 @@ function power(val, pow) {
 
 // Домашнее задание 3
 
-/* let justingNumbers = 'Простые числа от 0 до 100: ';
+//Задача №1
+let justingNumbers = 'Простые числа от 0 до 100: ';
 let i = 2;
 
 while (i < 101) {
@@ -125,9 +126,11 @@ while (i < 101) {
             }
 }
 
-alert(justingNumbers); */
+alert(justingNumbers);
 
-/* let basket = [
+//Задача №2
+
+let basket = [
             // 1. название товара 2. стоимость за 1 штуку 3. Количество штук в корзине
             ['подшипники', 250, 5],
             ['гайки', 5, 50],
@@ -151,6 +154,17 @@ function countBasketPrice(basket) {
 
 }
 
-alert(countBasketPrice(basket)); */
+alert(countBasketPrice(basket));
+
+//Задача №3
 
 for (let i = 0; i < 10; alert(i++)) { }
+
+//Задача №4
+
+let pyramid = '*';
+
+for (let i = 1; i < 21; i++) {
+            console.log(pyramid);
+            pyramid += '*';
+}
