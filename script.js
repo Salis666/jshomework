@@ -99,7 +99,7 @@ function power(val, pow) {
 // Домашнее задание 3
 
 //Задача №1
-let justingNumbers = 'Простые числа от 0 до 100: ';
+/* let justingNumbers = 'Простые числа от 0 до 100: ';
 let i = 2;
 
 while (i < 101) {
@@ -167,4 +167,18 @@ let pyramid = '*';
 for (let i = 1; i < 21; i++) {
             console.log(pyramid);
             pyramid += '*';
+} */
+
+// Домашнее задание 4
+
+//Задача 1
+
+function transformIsNumber(number) {
+            if (number > 999) {
+                        return console.log('Число превышает допустимое, максимальное число - 999');
+            }
+            let arrayNumber = (number + '').split('');
+
+            return { units: +arrayNumber[2], tens: +arrayNumber[1], hundreds: +arrayNumber[0] }
+
 }
