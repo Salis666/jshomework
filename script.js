@@ -182,3 +182,46 @@ function transformIsNumber(number) {
             return { units: +arrayNumber[2], tens: +arrayNumber[1], hundreds: +arrayNumber[0] }
 
 }
+
+// Задача 2
+
+
+let bearing = {
+            name: 'подшипник',
+            price: 250
+};
+let nut = {
+            name: 'гайки',
+            price: 5
+};
+let gasket = {
+            name: 'прокладки',
+            price: 30
+};
+let pipe = {
+            name: 'трубы',
+            price: 800
+};
+let lamp = {
+            name: 'лампы',
+            price: 50
+};
+
+let basket = [
+            // 1. Товар 2. Количество штук в корзине
+            [bearing, 5],
+            [nut, 50],
+            [gasket, 40],
+            [pipe, 2],
+            [lamp, 5]
+];
+
+function countBasketPrice(basket) {
+            let basketPrice = 0;
+            for (let i = 0; i < basket.length; i++) {
+                        basketPrice += (basket[i][0].price * basket[i][1]);
+            }
+            return basketPrice;
+}
+
+alert(countBasketPrice(basket));
