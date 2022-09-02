@@ -99,7 +99,7 @@ function power(val, pow) {
 // Домашнее задание 3
 
 //Задача №1
-let justingNumbers = 'Простые числа от 0 до 100: ';
+/* let justingNumbers = 'Простые числа от 0 до 100: ';
 let i = 2;
 
 while (i < 101) {
@@ -167,4 +167,61 @@ let pyramid = '*';
 for (let i = 1; i < 21; i++) {
             console.log(pyramid);
             pyramid += '*';
+} */
+
+// Домашнее задание 4
+
+//Задача 1
+
+function transformIsNumber(number) {
+            if (number > 999) {
+                        return console.log('Число превышает допустимое, максимальное число - 999');
+            }
+            let arrayNumber = (number + '').split('');
+
+            return { units: +arrayNumber[2], tens: +arrayNumber[1], hundreds: +arrayNumber[0] }
+
 }
+
+// Задача 2
+
+
+let bearing = {
+            name: 'подшипник',
+            price: 250
+};
+let nut = {
+            name: 'гайки',
+            price: 5
+};
+let gasket = {
+            name: 'прокладки',
+            price: 30
+};
+let pipe = {
+            name: 'трубы',
+            price: 800
+};
+let lamp = {
+            name: 'лампы',
+            price: 50
+};
+
+let basket = [
+            // 1. Товар 2. Количество штук в корзине
+            [bearing, 5],
+            [nut, 50],
+            [gasket, 40],
+            [pipe, 2],
+            [lamp, 5]
+];
+
+function countBasketPrice(basket) {
+            let basketPrice = 0;
+            for (let i = 0; i < basket.length; i++) {
+                        basketPrice += (basket[i][0].price * basket[i][1]);
+            }
+            return basketPrice;
+}
+
+alert(countBasketPrice(basket));
