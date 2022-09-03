@@ -173,7 +173,7 @@ for (let i = 1; i < 21; i++) {
 
 //Задача 1
 
-function transformIsNumber(number) {
+/* function transformIsNumber(number) {
             if (number > 999) {
                         return console.log('Число превышает допустимое, максимальное число - 999');
             }
@@ -224,4 +224,46 @@ function countBasketPrice(basket) {
             return basketPrice;
 }
 
-alert(countBasketPrice(basket));
+alert(countBasketPrice(basket)); */
+
+//Домашнее задание 5
+
+let desk = document.querySelector('.desk');
+const horizontal = ['', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+let vertical = 1;
+
+function checkForParity(number) {
+            if ((number % 2) == 0) {
+                        return true
+            } else return false
+}
+
+for (let i = 10; i > 0; i--) {
+            let tr = document.createElement('tr');
+            desk.appendChild(tr);
+            for (let a = 0; a < 10; a++) {
+                        let td = document.createElement('td');
+                        td.style.padding = '30px';
+                        if (checkForParity(i)) {
+                                    if (i < 10 && a > 0 && i > 1 && a < 9 && checkForParity(a)) {
+                                                td.style.backgroundColor = 'black'
+                                    }
+                        } else {
+                                    if (i < 10 && a > 0 && i > 1 && a < 9 && !checkForParity(a)) {
+                                                td.style.backgroundColor = 'black'
+                                    }
+                        }
+                        tr.appendChild(td);
+                        if ((i == 10 && a > 0) || (i == 1 && a > 0)) {
+                                    td.textContent = horizontal[a];
+                        }
+                        if (i < 10 && i > 1 && a == 0) {
+                                    td.textContent = `${i - 1}`;
+                        }
+                        if (i < 10 && i > 1 && a == 9) {
+                                    td.textContent = `${vertical}`;
+                                    vertical++;
+                        }
+                        td.style.border = '1px solid #000000';
+            }
+}
