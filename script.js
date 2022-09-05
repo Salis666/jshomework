@@ -181,52 +181,68 @@ for (let i = 1; i < 21; i++) {
 
             return { units: +arrayNumber[2], tens: +arrayNumber[1], hundreds: +arrayNumber[0] }
 
-}
+} */
 
 // Задача 2
 
 
 let bearing = {
             name: 'подшипник',
-            price: 250
+            price: 250,
+            totalPrice(quantity) {
+                        return this.price * quantity
+            }
 };
 let nut = {
             name: 'гайки',
-            price: 5
+            price: 5,
+            totalPrice(quantity) {
+                        return this.price * quantity
+            }
 };
 let gasket = {
             name: 'прокладки',
-            price: 30
+            price: 30,
+            totalPrice(quantity) {
+                        return this.price * quantity
+            }
 };
 let pipe = {
             name: 'трубы',
-            price: 800
+            price: 800,
+            totalPrice(quantity) {
+                        return this.price * quantity
+            }
 };
 let lamp = {
             name: 'лампы',
-            price: 50
+            price: 50,
+            totalPrice(quantity) {
+                        return this.price * quantity
+            }
 };
 
 let basket = [
-            // 1. Товар 2. Количество штук в корзине
-            [bearing, 5],
-            [nut, 50],
-            [gasket, 40],
-            [pipe, 2],
-            [lamp, 5]
+            bearing.totalPrice(5),
+            nut.totalPrice(50),
+            gasket.totalPrice(40),
+            pipe.totalPrice(2),
+            lamp.totalPrice(5)
 ];
 
 function countBasketPrice(basket) {
             let basketPrice = 0;
             for (let i = 0; i < basket.length; i++) {
-                        basketPrice += (basket[i][0].price * basket[i][1]);
+                        basketPrice += basket[i];
             }
             return basketPrice;
 }
 
-alert(countBasketPrice(basket)); */
+/* alert(countBasketPrice(basket)); */
 
 //Домашнее задание 5
+
+// Задача № 1
 
 let desk = document.querySelector('.desk');
 const horizontal = ['', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
@@ -267,3 +283,30 @@ for (let i = 10; i > 0; i--) {
                         td.style.border = '1px solid #000000';
             }
 }
+
+
+// Задача № 2
+
+let visualBasket = document.querySelector('.basket');
+let textVisualBasket = document.createElement('p');
+visualBasket.appendChild(textVisualBasket);
+
+if (basket.length > 0) {
+            textVisualBasket.textContent = `В корзине ${basket.length} товаров на сумму ${countBasketPrice(basket)} рублей`;
+} else {
+            textVisualBasket.textContent = 'Корзина пуста';
+}
+
+// Задача № 3
+
+let catalog = [bearing, nut, gasket, pipe, lamp];
+let visualCatalog = document.getElementById('catalog');
+let textVisualCatalog = document.createElement('ul');
+visualCatalog.appendChild(textVisualCatalog);
+
+for (let i = catalog.length; i > 0; i--) {
+            let li = document.createElement('li');
+            li.textContent = `${catalog[i - 1].name} - ${catalog[i - 1].price} рублей`;
+            textVisualCatalog.appendChild(li);
+}
+
