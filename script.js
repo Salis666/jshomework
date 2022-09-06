@@ -173,15 +173,21 @@ for (let i = 1; i < 21; i++) {
 
 //Задача 1
 
-/* function transformIsNumber(number) {
+function transformIsNumber(number) {
             if (number > 999) {
                         return console.log('Число превышает допустимое, максимальное число - 999');
             }
             let arrayNumber = (number + '').split('');
 
-            return { units: +arrayNumber[2], tens: +arrayNumber[1], hundreds: +arrayNumber[0] }
+            if (arrayNumber.length > 2) {
+                        return { units: +arrayNumber[2], tens: +arrayNumber[1], hundreds: +arrayNumber[0] }
+            } else if (arrayNumber.length == 2) {
+                        return { units: +arrayNumber[2], tens: +arrayNumber[1], hundreds: 0 }
+            } else {
+                        return { units: +arrayNumber[2], tens: 0, hundreds: 0 }
+            }
 
-} */
+}
 
 // Задача 2
 
@@ -309,4 +315,3 @@ for (let i = catalog.length; i > 0; i--) {
             li.textContent = `${catalog[i - 1].name} - ${catalog[i - 1].price} рублей`;
             textVisualCatalog.appendChild(li);
 }
-
